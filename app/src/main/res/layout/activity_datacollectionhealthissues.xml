@@ -1,0 +1,296 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbackground"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/header_bg_color"
+        android:gravity="center_horizontal"
+        android:layout_weight="0">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back"
+            android:layout_weight="0"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/mainheader_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="false"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Data Collection Form"
+            android:textColor="@color/header_text_color"
+            android:textSize="20sp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/menu"
+            android:layout_weight="0" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@drawable/midbackground"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="0" >
+
+            <TextView
+                android:layout_width="260dp"
+                android:layout_height="match_parent"
+                android:text="Health Issues"
+                android:id="@+id/textViewTitle"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@color/form_title_text_color"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/midbackground"
+            android:padding="3dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="6dp">
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/scrollView2"
+                android:background="@color/body_bg_color"
+                android:layout_weight="1"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/lightbackground"
+                    android:baselineAligned="true">
+
+                    <CheckBox
+                        android:text="Senior Mobility (Aged 55 &amp; Above)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/smobilityCB"
+                        android:layout_weight="0" />
+
+                    <EditText
+                        android:id="@+id/smobilityET"
+                        android:hint="Senior Mobility More Information"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"/>
+
+                    <CheckBox
+                        android:text="Adult Mobility"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/amobilityCB"
+                        android:layout_weight="0" />
+
+                    <EditText
+                        android:id="@+id/amobilityET"
+                        android:hint="Adult Mobility More Information"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"/>
+
+                    <CheckBox
+                        android:text="Visual"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/visualCB"
+                        android:layout_weight="0" />
+
+                    <EditText
+                        android:id="@+id/visualET"
+                        android:hint="Visual More Information"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"/>
+
+                    <CheckBox
+                        android:text="Hearing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/hearingCB"
+                        android:layout_weight="0" />
+
+                    <EditText
+                        android:id="@+id/hearingET"
+                        android:hint="Hearing More Information"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"/>
+
+                    <CheckBox
+                        android:text="Help for 3 or more Activities of Daily Living (Bathing, Dressing, Eating, Toileting, Walking or moving around or Transferring)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/help3CB"
+                        android:layout_weight="0" />
+
+                    <EditText
+                        android:id="@+id/help3ET"
+                        android:hint="More Information"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"/>
+
+                    <CheckBox
+                        android:text="High Medical Bills (Please advise resident to approach Medical Social Officer based in Hospital)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/highmedCB"
+                        android:layout_weight="0" />
+
+                    <EditText
+                        android:id="@+id/highmedET"
+                        android:hint="More Information"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"/>
+
+                    <CheckBox
+                        android:text="Others"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/othersCB"
+                        android:layout_weight="0" />
+
+                    <EditText
+                        android:id="@+id/othersET"
+                        android:hint="More Information"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"/>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0"
+        android:padding="3dp"
+        android:dividerPadding="3dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <Button
+            android:id="@+id/leftBtn"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/form_button_bg_color"
+            android:text="Back"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginLeft="2dp" />
+        <Button
+            android:id="@+id/centerBtn"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/form_button_bg_color"
+            android:text="Save"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginLeft="2dp"
+            android:visibility="invisible"/>
+        <Button
+            android:id="@+id/rightBtn"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/form_button_bg_color"
+            android:text="Next"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginLeft="2dp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,299 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbackground"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/header_bg_color"
+        android:gravity="center_horizontal"
+        android:layout_weight="0">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back"
+            android:layout_weight="0"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/mainheader_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="false"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Data Collection Form"
+            android:textColor="@color/header_text_color"
+            android:textSize="20sp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/menu"
+            android:layout_weight="0" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@drawable/midbackground"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="0" >
+
+            <TextView
+                android:layout_width="260dp"
+                android:layout_height="match_parent"
+                android:text="Issues Faced"
+                android:id="@+id/textViewTitle"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@color/form_title_text_color"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/midbackground"
+            android:padding="3dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="6dp">
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/scrollView2"
+                android:background="@color/body_bg_color"
+                android:layout_weight="1"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/lightbackground"
+                    android:baselineAligned="true">
+
+                    <CheckBox
+                        android:text="Financial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/financialCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Caregiving"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/careGivingCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Childcare"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/childCareCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Elderly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/elderlyCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Employment / Career"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/employmentCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Family Conflict"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/familyCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Family Violence (Child / Elder / Siblng / Spouse)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/violenceCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Gambling"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/gamblingCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Health"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/healthCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Housing / Shelter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/housingCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Interpersonal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/interpersonalCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Juvenile Delinquency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/juvenileCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Mental Health"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mentalCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="School"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/schoolCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Parenting / Child Management"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/parentingCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Partner Violence"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/partnerCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Retrenchment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/retrenchCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Substance Abuse - Alcohol / Drug / Others"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/substanceCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Youth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/youthCB"
+                        android:layout_weight="0" />
+
+                    <CheckBox
+                        android:text="Others"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/othersCB"
+                        android:layout_weight="0" />
+
+
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0"
+        android:padding="3dp"
+        android:dividerPadding="3dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <Button
+            android:id="@+id/leftBtn"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/form_button_bg_color"
+            android:text="Back"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginLeft="2dp" />
+        <Button
+            android:id="@+id/centerBtn"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/form_button_bg_color"
+            android:text="Save"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginLeft="2dp"
+            android:visibility="invisible"/>
+        <Button
+            android:id="@+id/rightBtn"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/form_button_bg_color"
+            android:text="Next"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginLeft="2dp"/>
+    </LinearLayout>
+
+</LinearLayout>

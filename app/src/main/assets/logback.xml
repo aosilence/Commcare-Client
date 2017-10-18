@@ -1,0 +1,42 @@
+<configuration debug="true">
+        <appender
+                name="LOGCAT"
+                class="ch.qos.logback.classic.android.LogcatAppender" >
+            <encoder>
+                <pattern>[%method] %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <property name="dest.dir" value="/sdcard/ComCareLog/" />
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${dest.dir}/ComCareLog.log</file>
+            <append>false</append>
+            <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+                <fileNamePattern>${dest.dir}/ComCareLog.%i.log</fileNamePattern>
+                <minIndex>1</minIndex>
+                <maxIndex>2</maxIndex>
+                <maxIndex>3</maxIndex>
+                <maxIndex>4</maxIndex>
+                <maxIndex>5</maxIndex>
+                <maxIndex>6</maxIndex>
+                <maxIndex>7</maxIndex>
+                <maxIndex>8</maxIndex>
+                <maxIndex>9</maxIndex>
+                <maxIndex>10</maxIndex>
+            </rollingPolicy>
+            <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+                <maxFileSize>5MB</maxFileSize>
+            </triggeringPolicy>
+            <encoder>
+                <pattern>%date %-5level %logger{35} - %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <logger name="com.commcare.capstone.comcare" level="TRACE">
+            <appender-ref ref="FILE" />
+        </logger>
+
+        <root level="DEBUG" >
+            <appender-ref ref="LOGCAT" />
+        </root>
+    </configuration>

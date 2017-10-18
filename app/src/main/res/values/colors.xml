@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="header_bg_color">#FFFFFF</color>
+    <color name="header_text_color">#000000</color>
+    <color name="form_bg_color">#F1B48E</color>
+    <color name="form_title_text_color">#FFFFFF</color>
+    <color name="form_border_color">#a0d2f0</color>
+    <color name="body_bg_color">#FFFFFF</color>
+    <color name="body_text_color">#000000</color>
+    <color name="body_grid_color">#d1d2d3</color>
+    <color name="form_button_bg_color">#FFFFFF</color>
+    <color name="table_header_color">#A3A4A5</color>
+</resources>

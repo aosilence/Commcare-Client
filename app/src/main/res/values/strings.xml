@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">Comcare</string>
+
+    <string name="msprompt">Choose a Marital Status</string>
+
+    <string-array name="ms_arrays">
+        <item>Single</item>
+        <item>Married</item>
+        <item>Widowed</item>
+    </string-array>
+
+    <string-array name="race_arrays">
+        <item>Chinese</item>
+        <item>Malay</item>
+        <item>Indian</item>
+    </string-array>
+
+    <string-array name="tof_arrays">
+        <item>1 Room HDB Flat</item>
+        <item>2 Room HDB Flat</item>
+        <item>3 Room HDB Flat</item>
+        <item>4 Room HDB Flat</item>
+        <item>5 Room HDB Flat</item>
+        <item>HDB Studio Apartment</item>
+    </string-array>
+
+    <string-array name="sl_arrays">
+        <item>English</item>
+        <item>Malay</item>
+        <item>Mandarin</item>
+        <item>Tamil</item>
+    </string-array>
+
+    <string-array name="r_arrays">
+        <item>Buddhism</item>
+        <item>Christianity</item>
+        <item>Hinduism</item>
+        <item>Islam</item>
+        <item>Taoism</item>
+        <item>No Religion</item>
+    </string-array>
+
+    <string-array name="edu_arrays">
+        <item>PSLE</item>
+        <item>N Level</item>
+        <item>O Level</item>
+        <item>A Level</item>
+        <item>NITEC</item>
+        <item>Diploma</item>
+        <item>Degree</item>
+        <item>Postgraduate Degree</item>
+        <item>Special School</item>
+        <item>No Formal Education</item>
+    </string-array>
+
+    <string-array name="vo_arrays">
+        <item>Y</item>
+        <item>N</item>
+    </string-array>
+
+    <string name="hiprompt">Choose a Household Income</string>
+
+    <string-array name="hi_arrays">
+        <item>No Income</item>
+        <item>Below $500</item>
+        <item>$500 - $999</item>
+        <item>$1,000 - $1,499 </item>
+        <item>$2,000 - $2,499</item>
+        <item>$2,500 - $2,999</item>
+        <item>$3,000 and above</item>
+     </string-array>
+</resources>

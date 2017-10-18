@@ -1,0 +1,596 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbackground"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/header_bg_color"
+        android:gravity="center_horizontal"
+        android:layout_weight="0">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back"
+            android:layout_weight="0"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/mainheader_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="false"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Data Collection Form"
+            android:textColor="@color/header_text_color"
+            android:textSize="20sp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/menu"
+            android:layout_weight="0" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@drawable/midbackground"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="0" >
+
+            <TextView
+                android:layout_width="260dp"
+                android:layout_height="match_parent"
+                android:text="Resident Information"
+                android:id="@+id/textViewTitle"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@color/form_title_text_color"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/midbackground"
+            android:padding="3dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="6dp">
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/scrollView2"
+                android:background="@color/body_bg_color"
+                android:layout_weight="1"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/lightbackground"
+                    android:baselineAligned="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Full Name"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <EditText
+                        android:id="@+id/fullNameET"
+                        android:hint="Full Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="NRIC"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <EditText
+                        android:id="@+id/nricET"
+                        android:hint="NRIC"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLength="15"
+                        android:maxLines="1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sex"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <RadioGroup
+                        android:id="@+id/radioSex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <RadioButton
+                            android:id="@+id/radioMale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Male"
+                            android:checked="true" />
+
+                        <RadioButton
+                            android:id="@+id/radioFemale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Female" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Date of Birth"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <EditText
+                        android:id="@+id/dateET"
+                        android:hint="Tap to select Date"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="date"
+                        android:layout_margin="3dp"
+                        android:maxLines="1"
+                        android:focusable="false"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Age"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <EditText
+                        android:id="@+id/ageET"
+                        android:hint="Age"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="number"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLength="3"
+                        android:maxLines="1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Contact Number"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <EditText
+                        android:id="@+id/ctET"
+                        android:hint="Contact Number"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="number"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLength="8"
+                        android:maxLines="1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Address"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <EditText
+                        android:id="@+id/addressET"
+                        android:hint="Address"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="3"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nationality"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <EditText
+                        android:id="@+id/nationalityET"
+                        android:hint="Nationality"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Marital Status"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/msSpin"
+                        android:prompt="@string/msprompt"
+                        android:entries="@array/ms_arrays" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Race"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/raceTV"
+                        android:hint="C / M / I / Others"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Type of Flat"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/flatTV"
+                        android:hint="HDB FLAT (1 / 2 / 3 / 4 / 5) HDB STUDIO APARTMENT:"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Spoken Language"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/languageTV"
+                        android:hint="English / Malay / Mandarin / Tamil / Dialect"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Religion"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/religionTV"
+                        android:hint="Buddhism / Christianity / Hinduism / Islam / Taoism / No Religion"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Occupation"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <EditText
+                        android:id="@+id/occupationET"
+                        android:hint="Occupation"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Salary"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <EditText
+                        android:id="@+id/salaryET"
+                        android:hint="Salary"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Household Income"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/hiSpin"
+                        android:prompt="@string/hiprompt"
+                        android:entries="@array/hi_arrays" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No. of members in household"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Senior Age 55 &amp; Above"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+                    <EditText
+                        android:id="@+id/a55ET"
+                        android:hint="Senior Age 55 &amp; Above"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="number"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"
+                        android:maxLength="3"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Adult Age 21 &amp; Above"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+                    <EditText
+                        android:id="@+id/a21ET"
+                        android:hint="Adult Age 21 &amp; Above"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="number"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"
+                        android:maxLength="3"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Young Children (Age 0 – 20)"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+                    <EditText
+                        android:id="@+id/b20ET"
+                        android:hint="Young Children (Age 0 – 20)"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="number"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"
+                        android:maxLength="3"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Highest Education Qualification"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/qualificationTV"
+                        android:hint="PSLE / N Level / A Level / O Level / NITEC / Diploma / Degree / Postgraduate Degree / Special School / No Formal Education"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Vehicle Owner (Self / Family member)"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/vehTV"
+                        android:hint="Y / N"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:singleLine="true" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Illnesses"
+                        android:gravity="center_vertical|left"
+                        android:layout_weight="0"
+                        android:textColor="@color/body_text_color" />
+
+                    <EditText
+                        android:id="@+id/illnessesET"
+                        android:hint="Illnesses"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:layout_margin="3dp"
+                        android:selectAllOnFocus="true"
+                        android:maxLines="1"/>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0"
+        android:padding="3dp"
+        android:dividerPadding="3dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <Button
+            android:id="@+id/leftBtn"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/form_button_bg_color"
+            android:text="Back"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginLeft="2dp" />
+        <Button
+            android:id="@+id/centerBtn"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/form_button_bg_color"
+            android:text="Save"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginLeft="2dp"
+            android:visibility="invisible"/>
+        <Button
+            android:id="@+id/rightBtn"
+            android:layout_width="80dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/form_button_bg_color"
+            android:text="Next"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginLeft="2dp" />
+    </LinearLayout>
+
+</LinearLayout>
