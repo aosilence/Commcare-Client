@@ -3,7 +3,7 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginbackground"
+    android:background="@color/form_bg_color"
     android:orientation="vertical"
     >
 
@@ -133,11 +133,10 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:background="@color/form_button_bg_color"
-            android:text="Save"
+            android:text="Preview Genogram"
             android:textColor="#000000"
             android:textSize="15sp"
-            android:layout_marginLeft="2dp"
-            android:visibility="invisible"/>
+            android:layout_marginLeft="2dp" />
         <Button
             android:id="@+id/rightBtn"
             android:layout_width="80dp"

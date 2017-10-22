@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
-import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
@@ -12,7 +11,7 @@ import com.j256.ormlite.table.TableUtils;
 import java.io.Serializable;
 import java.sql.SQLException;
 
-import commcare.capstone.comcare.model.GenogramObj;
+import commcare.capstone.comcare.model.datacollection.GenogramObj;
 import commcare.capstone.comcare.model.HouseVisit;
 import commcare.capstone.comcare.model.LastLogin;
 import commcare.capstone.comcare.model.Resident;

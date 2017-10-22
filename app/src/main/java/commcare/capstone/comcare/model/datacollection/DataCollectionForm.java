@@ -1,26 +1,16 @@
 package commcare.capstone.comcare.model.datacollection;
 
-import android.support.annotation.NonNull;
-
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.Iterator;
 
-import com.j256.ormlite.dao.CloseableIterator;
-import com.j256.ormlite.dao.CloseableWrappedIterable;
-import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import commcare.capstone.comcare.biz.DataBiz;
-import commcare.capstone.comcare.model.GenogramObj;
 import commcare.capstone.comcare.model.Resident;
 import commcare.capstone.comcare.model.User;
 
@@ -43,7 +33,8 @@ public class DataCollectionForm {
 	Issues issues;
 	@DatabaseField(foreign = true, foreignAutoCreate = true, foreignAutoRefresh = true, maxForeignAutoRefreshLevel = 3)
 	Assistances assistances;
-
+	ArrayList<GenogramObj> genos;
+	String genoPath;
 
 	public DataCollectionForm()
 	{
@@ -144,12 +135,20 @@ public class DataCollectionForm {
 		assistances.setParent(this);
 	}
 
-	public ArrayList<GenogramObj> getGenogramObjs() {
-		LOG.debug("THIS ID = "+this.getId());
-		return new ArrayList<GenogramObj>(DataBiz.getInstance().getDb().getGenogramObjRuntimeDAO().queryForEq("parent_id",this.getId()));
-
+	public ArrayList<GenogramObj> getGenos() {
+		genos = new ArrayList<GenogramObj>(DataBiz.getInstance().getDb().getGenogramObjRuntimeDAO().queryForEq("parent_id",this.getId()));
+		return genos;
 	}
 
+	public String getGenoPath() {
+		return genoPath;
+	}
 
+	public void setGenoPath(String genoPath) {
+		this.genoPath = genoPath;
+	}
 
+	public void setGenos(ArrayList<GenogramObj> genos) {
+		this.genos = genos;
+	}
 }

@@ -201,6 +201,81 @@
                         android:layout_weight="0"
                         android:ems="10"
                         android:gravity="left|top"
+                        android:text="Illnesses"
+                        android:textColor="#a3a4a5"
+                        android:textSize="8sp"
+                        android:padding="2dp"
+                        android:layout_margin="1dp" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="0"
+                        android:background="@color/body_grid_color" />
+
+                    <TextView
+                        android:id="@+id/row_illness"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:gravity="center_vertical|left"
+                        android:textColor="@color/body_text_color"
+                        android:textSize="15sp"
+                        android:padding="2dp"
+                        android:layout_margin="1dp"
+                        android:layout_height="25dp" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="0"
+                        android:background="@color/body_grid_color" />
+
+                    <TextView
+                        android:id="@+id/TextView11"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="left|top"
+                        android:text="Sex"
+                        android:textColor="#a3a4a5"
+                        android:textSize="8sp"
+                        android:padding="2dp"
+                        android:layout_margin="1dp" />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="0"
+                        android:background="@color/body_grid_color" />
+
+                    <TextView
+                        android:id="@+id/row_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="5"
+                        android:ems="10"
+                        android:gravity="center_vertical|left"
+                        android:textColor="@color/body_text_color"
+                        android:textSize="15sp"
+                        android:padding="2dp"
+                        android:layout_margin="1dp"
+                        android:layout_height="25dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#eeeeee">
+
+                    <TextView
+                        android:id="@+id/TextView12"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:ems="10"
+                        android:gravity="left|top"
                         android:text="Occupation"
                         android:textColor="#a3a4a5"
                         android:textSize="8sp"
@@ -232,7 +307,7 @@
                         android:background="@color/body_grid_color" />
 
                     <TextView
-                        android:id="@+id/TextView11"
+                        android:id="@+id/TextView13"
                         android:layout_width="50dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0"
@@ -249,49 +324,10 @@
                         android:layout_height="fill_parent"
                         android:layout_weight="0"
                         android:background="@color/body_grid_color" />
-
                     <TextView
                         android:id="@+id/row_salary"
                         android:layout_width="wrap_content"
                         android:layout_weight="5"
-                        android:ems="10"
-                        android:gravity="center_vertical|left"
-                        android:textColor="@color/body_text_color"
-                        android:textSize="15sp"
-                        android:padding="2dp"
-                        android:layout_margin="1dp"
-                        android:layout_height="25dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#eeeeee">
-
-                    <TextView
-                        android:id="@+id/TextView12"
-                        android:layout_width="50dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0"
-                        android:ems="10"
-                        android:gravity="left|top"
-                        android:text="Illness"
-                        android:textColor="#a3a4a5"
-                        android:textSize="8sp"
-                        android:padding="2dp"
-                        android:layout_margin="1dp" />
-
-                    <View
-                        android:layout_width="2dp"
-                        android:layout_height="fill_parent"
-                        android:layout_weight="0"
-                        android:background="@color/body_grid_color" />
-
-                    <TextView
-                        android:id="@+id/row_illness"
-                        android:layout_width="wrap_content"
-                        android:layout_weight="1"
                         android:ems="10"
                         android:gravity="center_vertical|left"
                         android:textColor="@color/body_text_color"

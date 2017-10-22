@@ -1,6 +1,7 @@
 package commcare.capstone.comcare.view;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,8 @@ import android.widget.ImageView;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
 
 import commcare.capstone.comcare.R;
 import commcare.capstone.comcare.biz.DataBiz;
@@ -121,9 +124,18 @@ public class DataCollectionAssistanceFormActivity extends BaseActivity {
 		DataBiz.getInstance().getDb().getAssistancesRuntimeDAO().createOrUpdate(hv.getDataCollectionForm().getAssistances());
 		DataBiz.getInstance().getDb().getIssuesRuntimeDAO().createOrUpdate(hv.getDataCollectionForm().getIssues());
 		DataBiz.getInstance().getDb().getDataCollectionFormRuntimeDAO().createOrUpdate(hv.getDataCollectionForm());
-		DataBiz.getInstance().getDb().getHouseVisitRuntimeDAO().createOrUpdate(hv);try
+		DataBiz.getInstance().getDb().getHouseVisitRuntimeDAO().createOrUpdate(hv);
+		try
 		{
-			PDFGenerator.generateDataCollectionPDF(this, hv);
+			String pathString = PDFGenerator.generateDataCollectionPDF(this, hv);
+			LOG.debug("Returned path "+pathString);
+			Uri path = Uri.fromFile(new File(pathString));
+			Intent objIntent = new Intent(Intent.ACTION_VIEW);
+			objIntent.setDataAndType(path, "application/pdf");
+			objIntent.setFlags(Intent. FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(objIntent);//Staring the pdf viewer
+			LOG.debug("Started PDF to path "+pathString);
+
 		}
 		catch (Exception e)
 		{

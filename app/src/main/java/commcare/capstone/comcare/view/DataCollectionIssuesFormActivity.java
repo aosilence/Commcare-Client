@@ -99,7 +99,7 @@ public class DataCollectionIssuesFormActivity extends BaseActivity {
 		ImageView back = (ImageView) findViewById(R.id.back);
 		back.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(DataCollectionIssuesFormActivity.this, DataCollectionFormActivity.class);
+				Intent intent = new Intent(DataCollectionIssuesFormActivity.this, DataCollectionGenoFormActivity.class);
 				intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 				startActivity(intent);
 			}
@@ -108,7 +108,7 @@ public class DataCollectionIssuesFormActivity extends BaseActivity {
 		Button leftBtn = (Button) findViewById(R.id.leftBtn);
 		leftBtn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(DataCollectionIssuesFormActivity.this, DataCollectionFormActivity.class);
+				Intent intent = new Intent(DataCollectionIssuesFormActivity.this, DataCollectionGenoFormActivity.class);
 				intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 				startActivity(intent);
 			}

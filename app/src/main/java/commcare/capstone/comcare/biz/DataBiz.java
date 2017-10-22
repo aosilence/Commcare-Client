@@ -30,7 +30,9 @@ public class DataBiz {
     transient ComCareService ws = null;
     private HouseVisit selectedHV = null;
     String url = "http://13.229.131.55/ComCare/services/ComCareService.ComCareServiceHttpsSoap12Endpoint/";
+   // String localurl = "http://10.0.2.2:8080/ComCare/services/ComCareService.ComCareServiceHttpsSoap12Endpoint/";
     String localurl = "http://192.168.1.117:8080/ComCare/services/ComCareService.ComCareServiceHttpsSoap12Endpoint/";
+
 
     public static DataBiz getInstance() {
         return dataBiz;
@@ -111,8 +113,9 @@ public class DataBiz {
         if (lastlogin.size()>0)
         {
             lastlogin.get(0).setLoggedIn(false);
+            DataBiz.getInstance().getDb().getLastLoginRuntimeDAO().createOrUpdate(lastlogin.get(0));
         }
-        DataBiz.getInstance().getDb().getLastLoginRuntimeDAO().createOrUpdate(lastlogin.get(0));
+
     }
 
     public void setSelectedHV(HouseVisit houseVisit) {

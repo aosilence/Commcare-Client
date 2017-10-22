@@ -1,7 +1,6 @@
 package commcare.capstone.comcare.view;
 
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -18,10 +17,7 @@ import org.slf4j.LoggerFactory;
 
 import commcare.capstone.comcare.R;
 import commcare.capstone.comcare.biz.DataBiz;
-import commcare.capstone.comcare.model.GenogramObj;
-
-import static commcare.capstone.comcare.R.id.radioFemale;
-import static commcare.capstone.comcare.R.id.radioMale;
+import commcare.capstone.comcare.model.datacollection.GenogramObj;
 
 
 public class GenoDialog extends Dialog
@@ -75,6 +71,8 @@ public class GenoDialog extends Dialog
         occupationET = (EditText) findViewById(R.id.occupationET);
         salaryET = (EditText) findViewById(R.id.salaryET);
         illnessET = (EditText) findViewById(R.id.illnessET);
+
+        relationTV.setText("Relationship to " + parentGeno.getFullName());
     }
 
     private void setupButtons() {

@@ -3,10 +3,15 @@ package commcare.capstone.comcare.util;
 import android.app.Activity;
 import android.os.Environment;
 
+import com.itextpdf.text.Annotation;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.pdf.AcroFields;
+import com.itextpdf.text.pdf.BaseField;
+import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
+import com.itextpdf.text.pdf.PushbuttonField;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +33,7 @@ import commcare.capstone.comcare.view.DataCollectionAssistanceFormActivity;
 public class PDFGenerator {
     static Logger LOG = LoggerFactory.getLogger(DataCollectionAssistanceFormActivity.class);
 
-    public static void generateDataCollectionPDF(Activity context, HouseVisit hv) throws IOException, DocumentException {
+    public static String generateDataCollectionPDF(Activity context, HouseVisit hv) throws IOException, DocumentException {
         PdfReader reader = new PdfReader(context.getResources().openRawResource(R.raw.datacollection));
         File pdfFolder = new File(Environment.getExternalStorageDirectory()
                 + "/generated/datacollection/");
@@ -52,6 +57,13 @@ public class PDFGenerator {
 //        form.setField("GRLStaffContact", );
 //        form.setField("EndorsedBy", );
 //        form.setField("Genogram", );
+
+        PdfContentByte content = stamper.getOverContent(1);
+        Image image = Image.getInstance(hv.getDataCollectionForm().getGenoPath());
+        image.scaleAbsoluteHeight(235);
+        image.scaleAbsoluteWidth(435);
+        image.setAbsolutePosition(80, 305);
+        content.addImage(image);
         //Resident
         form.setField("Full Name", hv.getResident().getFullName());
         form.setField("NRIC", hv.getResident().getNric());
@@ -73,8 +85,8 @@ public class PDFGenerator {
         {
             String[] members = householdMembers.split("\\|");
             String houseHoldMemberString = "Senior Age 55 & Above: " + members[0];
-            houseHoldMemberString += System.getProperty("line.separator") + "Adult Age 21 & Above: " + members[1];
-            houseHoldMemberString += System.getProperty("line.separator") + "Young Children (Age 0 – 20): " + members[2];
+            houseHoldMemberString += "\nAdult Age 21 & Above: " + members[1];
+            houseHoldMemberString += "\nYoung Children (Age 0 – 20): " + members[2];
 
             form.setField("HouseholdMembers", houseHoldMemberString);
         }
@@ -291,7 +303,7 @@ public class PDFGenerator {
         stamper.setFormFlattening(true);
         stamper.close();
         reader.close();
-
+        return dst;
     }
 
 }

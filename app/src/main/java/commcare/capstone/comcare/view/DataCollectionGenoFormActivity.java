@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -11,6 +12,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -27,9 +29,7 @@ import java.util.ArrayList;
 
 import commcare.capstone.comcare.R;
 import commcare.capstone.comcare.biz.DataBiz;
-import commcare.capstone.comcare.model.GenogramObj;
-
-import static android.R.attr.data;
+import commcare.capstone.comcare.model.datacollection.GenogramObj;
 
 
 public class DataCollectionGenoFormActivity extends ListActivity
@@ -72,12 +72,24 @@ public class DataCollectionGenoFormActivity extends ListActivity
 				startActivity(intent);
 			}
 		});
+		Button centerBtn = (Button) findViewById(R.id.centerBtn);
+		centerBtn.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				GenoDrawDialog dialog = new GenoDrawDialog(DataCollectionGenoFormActivity.this, datas, true);
+				dialog.show();
+				Window window = dialog.getWindow();
+				window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+			}
+		});
+
+
 		Button rightBtn = (Button) findViewById(R.id.rightBtn);
 		rightBtn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(DataCollectionGenoFormActivity.this, DataCollectionIssuesFormActivity.class);
-				intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-				startActivity(intent);
+				GenoDrawDialog dialog = new GenoDrawDialog(DataCollectionGenoFormActivity.this, datas, false);
+				dialog.show();
+				Window window = dialog.getWindow();
+				window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 			}
 		});
 	}
@@ -134,7 +146,7 @@ public class DataCollectionGenoFormActivity extends ListActivity
 	}
 	public void updateUI()
 	{
-		datas = DataBiz.getInstance().getSelectedHV().getDataCollectionForm().getGenogramObjs();
+		datas = DataBiz.getInstance().getSelectedHV().getDataCollectionForm().getGenos();
 		adapter = new MySimpleArrayAdapter(this, datas);
 		setListAdapter(adapter);
 		adapter.notifyDataSetChanged();
@@ -144,7 +156,7 @@ public class DataCollectionGenoFormActivity extends ListActivity
 	protected void onResume() {
 		super.onResume();
 
-		datas = DataBiz.getInstance().getSelectedHV().getDataCollectionForm().getGenogramObjs();
+		datas = DataBiz.getInstance().getSelectedHV().getDataCollectionForm().getGenos();
 		LOG.debug("datas size = "+datas.size());
 		adapter = new MySimpleArrayAdapter(this, datas);
 		setListAdapter(adapter);
@@ -206,6 +218,7 @@ public class DataCollectionGenoFormActivity extends ListActivity
 			TextView occupation = (TextView) rowView.findViewById(R.id.row_occupation);
 			TextView salary = (TextView) rowView.findViewById(R.id.row_salary);
 			TextView illness = (TextView) rowView.findViewById(R.id.row_illness);
+			TextView sex = (TextView) rowView.findViewById(R.id.row_sex);
 			GenogramObj data = values.get(position);
 
 			if (data.getRelateTo() == null)
@@ -221,6 +234,7 @@ public class DataCollectionGenoFormActivity extends ListActivity
 			occupation.setText(data.getOccupation());
 			salary.setText(data.getSalary());
 			illness.setText(data.getIllness());
+			sex.setText(data.getSex());
 			return rowView;
 		}
 

@@ -1,16 +1,22 @@
-package commcare.capstone.comcare.model;
-
-import android.widget.EditText;
+package commcare.capstone.comcare.model.datacollection;
 
 import com.j256.ormlite.field.DatabaseField;
-
-import commcare.capstone.comcare.model.datacollection.DataCollectionForm;
+import com.j256.ormlite.table.DatabaseTable;
 
 /**
  * Created by yuan on 18/10/17.
  */
-
+@DatabaseTable(tableName = "genogramobj")
 public class GenogramObj {
+
+    public static final String RELATIONSHIP_PARENT = "Parent";
+    public static final String RELATIONSHIP_SPOUSE = "Spouse";
+    public static final String RELATIONSHIP_SIBLING = "Sibling";
+    public static final String RELATIONSHIP_CHILD = "Child";
+    public static final String RELATIONSHIP_MAIN = "Self";
+
+    public static final String SEX_MALE = "Male";
+    public static final String SEX_FEMALE = "Female";
 
     @DatabaseField(generatedId = true, allowGeneratedIdInsert = true) long id;
     @DatabaseField(foreign = true, foreignAutoCreate = true, foreignAutoRefresh = true, maxForeignAutoRefreshLevel = 3)
@@ -24,12 +30,9 @@ public class GenogramObj {
     @DatabaseField(columnName = "sex", canBeNull = true) String sex;
     @DatabaseField(foreign = true, foreignAutoCreate = true, foreignAutoRefresh = true, maxForeignAutoRefreshLevel = 3)
     GenogramObj relateTo;
+    int x;
+    int y;
 
-    public static final String RELATIONSHIP_PARENT = "Parent";
-    public static final String RELATIONSHIP_SPOUSE = "Spouse";
-    public static final String RELATIONSHIP_SIBLING = "Sibling";
-    public static final String RELATIONSHIP_CHILD = "Child";
-    public static final String RELATIONSHIP_MAIN = "Self";
 
     public GenogramObj getRelateTo() {
         return relateTo;
@@ -109,5 +112,21 @@ public class GenogramObj {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 }

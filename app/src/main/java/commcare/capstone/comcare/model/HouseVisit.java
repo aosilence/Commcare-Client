@@ -19,12 +19,12 @@ public class HouseVisit {
 
     Logger LOG = LoggerFactory.getLogger(HouseVisit.class);
 
-    public static final String CANCEL = "CANCEL_PENDING";
-    public static final String CANCELLED = "CANCELED";
-    public static final String NEW = "NEW";
-    public static final String COMPLETED = "COMPLETED";
-    public static final String SUBMITTED = "SUBMITTED";
-    public static final String REVERTED = "REVERTED";
+    public static final String CANCEL = "Cancel Pending";
+    public static final String CANCELLED = "Cancelled";
+    public static final String NEW = "New";
+    public static final String COMPLETED = "Completed";
+    public static final String SUBMITTED = "Submitted";
+    public static final String REVERTED = "Reverted";
 
     @DatabaseField(generatedId = true, allowGeneratedIdInsert = true) long id;
     @DatabaseField(foreign = true, foreignAutoCreate = true, foreignAutoRefresh = true, maxForeignAutoRefreshLevel = 3)

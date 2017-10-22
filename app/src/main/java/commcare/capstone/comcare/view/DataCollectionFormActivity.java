@@ -17,19 +17,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
 import commcare.capstone.comcare.R;
 import commcare.capstone.comcare.biz.DataBiz;
-import commcare.capstone.comcare.model.GenogramObj;
+import commcare.capstone.comcare.model.datacollection.GenogramObj;
 import commcare.capstone.comcare.model.HouseVisit;
 import commcare.capstone.comcare.model.datacollection.DataCollectionForm;
-
-import static android.R.attr.x;
-import static commcare.capstone.comcare.R.array.race_arrays;
 
 
 public class DataCollectionFormActivity extends BaseActivity {
@@ -197,7 +193,7 @@ public class DataCollectionFormActivity extends BaseActivity {
 
 	private void createGenogram() {
 		if (hv.getDataCollectionForm() != null
-				&& hv.getDataCollectionForm().getGenogramObjs().size() == 0)
+				&& hv.getDataCollectionForm().getGenos().size() == 0)
 		{
 			GenogramObj geno = new GenogramObj();
 			geno.setRelation(GenogramObj.RELATIONSHIP_MAIN);
@@ -207,11 +203,12 @@ public class DataCollectionFormActivity extends BaseActivity {
 			geno.setSalary(hv.getResident().getSalary());
 			geno.setIllness(hv.getResident().getIllnesses());
 			geno.setParent(hv.getDataCollectionForm());
+			geno.setSex(hv.getResident().getSex());
 			DataBiz.getInstance().getDb().getGenogramObjRuntimeDAO().createOrUpdate(geno);
 		}
 		else
 		{
-			for (GenogramObj geno : hv.getDataCollectionForm().getGenogramObjs())
+			for (GenogramObj geno : hv.getDataCollectionForm().getGenos())
 			{
 				if (geno.getRelation().equals(GenogramObj.RELATIONSHIP_MAIN))
 				{
